@@ -1,1 +1,164 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>AI Ethics Coach — Governance & Risk Trainer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="ae-header">
+      <div class="ae-brand">
+        <div class="ae-mark">Æ</div>
+        <div>
+          <h1>AI Ethics Coach</h1>
+          <p>Governance · Risk · Accountability — In-AI Era Drills</p>
+        </div>
+      </div>
 
+      <div class="ae-header-actions">
+        <button id="btn-coach-intro" class="ae-btn primary">
+          ▶ Play Coach Intro
+        </button>
+        <button id="btn-tts-toggle" class="ae-btn ghost">
+          🔊 TTS: ON
+        </button>
+      </div>
+    </header>
+
+    <main class="ae-main">
+      <!-- LEFT COLUMN — ABOUT + TRACKS -->
+      <section class="ae-column">
+        <section class="ae-card">
+          <h2>How this coach behaves</h2>
+          <p class="ae-muted">
+            This is a <strong>pressure coach</strong>, not a hype man.
+            It asks hard questions about privacy, bias, transparency, and governance.
+            You answer. It reacts. No grades. Just signal about where you’re shallow.
+          </p>
+          <ul class="ae-bullets">
+            <li>Client-side only — HTML, CSS, JS + Text-to-Speech.</li>
+            <li>Keeps your writing local in this browser tab.</li>
+            <li>Blunt about weak answers. Calm about strong ones.</li>
+          </ul>
+          <p class="ae-note">
+            Use this for practice before real governance reviews, stakeholder briefings,
+            or ethics panels.
+          </p>
+        </section>
+
+        <section class="ae-card">
+          <h2>Choose an ethics track</h2>
+          <label class="ae-label" for="track-select">Track</label>
+          <select id="track-select">
+            <option value="">Select a track…</option>
+            <option value="privacy">Privacy & PIAs</option>
+            <option value="bias">Bias & Fairness</option>
+            <option value="transparency">Transparency & Explainability</option>
+            <option value="governance">Governance & Accountability</option>
+            <option value="compas">Case Study — COMPAS Failure</option>
+          </select>
+
+          <button id="btn-start-track" class="ae-btn primary full">
+            Start Ethics Session
+          </button>
+
+          <p id="track-brief" class="ae-brief ae-muted">
+            Pick a track to hear how the coach will pressure you.
+          </p>
+
+          <div class="ae-status-line">
+            <span id="session-status">SESSION: idle — no track active.</span>
+          </div>
+        </section>
+
+        <section class="ae-card ae-legal">
+          <h3>Boundary</h3>
+          <p>
+            This is a <strong>training simulation</strong>. It does not give legal advice, does not
+            certify compliance, and does not replace real governance boards.
+            It exists to sharpen your ethical reflexes before you touch production systems.
+          </p>
+        </section>
+      </section>
+
+      <!-- RIGHT COLUMN — QUESTION / ANSWER CONSOLE -->
+      <section class="ae-column">
+        <section class="ae-card qa-card">
+          <header class="qa-header">
+            <div>
+              <h2 id="question-title">No question loaded yet</h2>
+              <p id="question-meta" class="ae-muted">
+                Choose a track and start the session to get your first drill.
+              </p>
+            </div>
+            <div class="qa-controls">
+              <button id="btn-play-question" class="ae-btn ghost small" disabled>
+                ▶ Play Question
+              </button>
+              <button id="btn-next-question" class="ae-btn ghost small" disabled>
+                ↻ New Question
+              </button>
+            </div>
+          </header>
+
+          <p id="question-text" class="qa-question">
+          </p>
+
+          <label class="ae-label" for="answer-input">
+            Your answer (this is what the Ethics Coach reviews)
+          </label>
+          <textarea
+            id="answer-input"
+            rows="7"
+            placeholder="Answer as if you’re in front of a risk committee or ethics board, not a group chat."
+          ></textarea>
+
+          <div class="qa-actions">
+            <button id="btn-submit-answer" class="ae-btn primary">
+              Submit Answer for Coaching
+            </button>
+            <button id="btn-clear-answer" class="ae-btn ghost">
+              Clear
+            </button>
+          </div>
+
+          <div class="qa-feedback">
+            <h3>Coach Feedback</h3>
+            <p id="coach-feedback" class="ae-muted">
+              When you submit an answer, the Ethics Coach will respond here — direct, not polite.
+            </p>
+          </div>
+        </section>
+
+        <section class="ae-card log-card">
+          <header class="log-header">
+            <h3>Session Notes</h3>
+            <button id="btn-copy-notes" class="ae-btn ghost small">
+              📋 Copy notes
+            </button>
+          </header>
+          <p class="ae-muted small">
+            This is a lightweight “vector memory” of your last few reps in this browser.
+            Use it to see your ethical blind spots.
+          </p>
+          <ul id="notes-list" class="notes-list">
+            <li class="ae-muted small">
+              No notes yet. Answer a question to start building your ethics trail.
+            </li>
+          </ul>
+        </section>
+      </section>
+    </main>
+
+    <footer class="ae-footer">
+      <span>Flame Division Academy — Ethics & Governance Dojo</span>
+      <span>Local-only · No cloud storage · IAIE training tool</span>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
